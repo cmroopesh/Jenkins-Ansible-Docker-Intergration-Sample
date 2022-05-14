@@ -35,10 +35,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
+                      <configuration>
+    <webXml>src\main\webapp\WEB-INF\web.xml</webXml>        
+  </configuration>
                 <version>2.1.1</version>
-                <configuration>
-                    <warName>spring-social-twitter4j</warName>
-                </configuration>
+              
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
