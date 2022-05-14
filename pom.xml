@@ -17,18 +17,35 @@
    
     <build>
         <finalName>Jenkins-Ansible-Docker-Intergration-Sample</finalName>
-             <plugins>      
-         <plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-war-plugin</artifactId>
-  <version>2.2</version>
-</plugin>
+    <resources>
+            <resource>
+                <directory>src/main/Webapp</directory>
+            </resource>
+        </resources>
+        <plugins>
             <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>tomcat-maven-plugin</artifactId>
-        <version>1.0-beta-1</version>
-      </plugin>
-            </plugins>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>                
+                <configuration>
+                    <source>${java-version}</source>
+                    <target>${java-version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1.1</version>
+                <configuration>
+                    <warName>spring-social-twitter4j</warName>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>tomcat-maven-plugin</artifactId>
+                <version>1.1</version>
+            </plugin>
+                 </plugins>
     </build>
 
 </project>
