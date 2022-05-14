@@ -1,5 +1,4 @@
 [dev]
 
 54.204.230.244 ansible_user=k6roopeshgmail
-set_fact:
-    ansible_port: 42006
+
