@@ -1,4 +1,3 @@
 [dev]
-172.31.17.128    ansible_user=k6roopeshgmail
-
+172.31.17.128    ansible_user=k6roopeshgmail ansible_connection=ssh ansible_private_key_file=~/.ssh/id_rsa.pub
 
