@@ -1,4 +1,4 @@
 [dev]
-172.31.17.128
-localhost
+172.31.17.128    ansible_user=k6roopeshgmail
+
 
