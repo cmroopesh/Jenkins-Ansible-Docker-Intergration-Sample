@@ -15,8 +15,7 @@
       copy:
         src: index.html
         dest: /var/www/html/
-       notify:
-    - Restart apache
+       notify: Restart apache
 
   - name: Ensure apache is running
       name: httpd
