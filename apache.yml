@@ -1,6 +1,6 @@
 ---
 - hosts: dev 
-  become: True
+    become: True
   tasks:
     - name: Install packages
       yum:
@@ -15,4 +15,4 @@
       copy:
         src: index.html
         dest: /var/www/html/
----
+...
