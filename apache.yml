@@ -12,16 +12,5 @@
     copy:
       src: "index.html"
           dest: "/var/www/html/index.html"
-    notify: restart service
-
-
-  handlers:
-  - name: restart service
-    service:
-	  name: "httpd"
-	  state: restarted
-	  enabled: yes
-    register: restart
-  - debug:
-      var: restart.stdout
+   
   
