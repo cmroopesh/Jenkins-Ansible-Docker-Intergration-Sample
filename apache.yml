@@ -22,6 +22,5 @@
         name: httpd
         state: restarted
         enabled: yes
-        register:restart
-        
+        register:restart        
 ...
