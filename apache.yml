@@ -15,12 +15,14 @@
       copy:
         src: index.html
         dest: /var/www/html/
-        notify: restart service
-        
-      handlers:
-    - name: Restart Apache server
-      service:
+       notify:
+    - Restart apache
+
+  - name: Ensure apache is running
+      name: httpd
+      state: started
+
+  handlers:
+    - name: Restart apache
         name: httpd
         state: restarted
-        enabled: yes   
-...
