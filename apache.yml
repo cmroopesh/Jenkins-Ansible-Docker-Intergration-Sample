@@ -11,6 +11,6 @@
   - name: "Creating web pages"
     copy:
       src: "index.html"
-          dest: "/var/www/html/index.html"
+          dest: "/var/www/html/"
    
   
