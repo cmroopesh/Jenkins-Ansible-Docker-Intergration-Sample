@@ -17,10 +17,9 @@
         dest: /var/www/html/
         notify: restart service
         handlers:
-    - name: restart Apache server
+    - name: Restart Apache server
       service:
         name: httpd
         state: restarted
-        enabled: yes
-        register:restart        
+        enabled: yes   
 ...
