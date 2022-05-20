@@ -20,7 +20,7 @@
     - name: restart Apache server
       service:
         name: httpd
-         state: restarted
+        state: restarted
         enabled: yes
         register:restart
         
