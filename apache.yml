@@ -2,26 +2,26 @@
 - hosts: dev 
   become: True
   tasks:
-    - name: Install packages
-      yum:
-        name: "httpd"
-        state: "present"
-    - name: Start Apache server
-      service:
-        name: httpd
-        state: started
-        enabled: True
-    - name: Deploy static website
-      copy:
-        src: index.html
-        dest: /var/www/html/
-       notify: Restart apache
+  - name: "httpd software installation"
+    package:
+      name: "httpd"
+      state: present
 
-  - name: Ensure apache is running
-      name: httpd
-      state: started
+
+  - name: "Creating web pages"
+    copy:
+      src: "index.html"
+          dest: "/var/www/html/index.html"
+    notify: restart service
+
 
   handlers:
-    - name: Restart apache
-        name: httpd
-        state: restarted
+  - name: restart service
+    service:
+	  name: "httpd"
+	  state: restarted
+	  enabled: yes
+    register: restart
+  - debug:
+      var: restart.stdout
+  
