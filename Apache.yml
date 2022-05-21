@@ -12,7 +12,7 @@
         state: started
         enabled: True
   notify:
-         - restart httpd
+    - restart httpd
     - name: Deploy static website
       copy:
         src: index.html
