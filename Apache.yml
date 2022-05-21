@@ -17,6 +17,7 @@
         dest: /var/www/html/
   handlers:
     - name: Restart apache server
+     service:
         name: httpd
         state: restarted 
         enabled: True
