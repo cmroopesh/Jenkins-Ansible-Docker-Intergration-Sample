@@ -11,15 +11,18 @@
         name: httpd
         state: started
         enabled: True
+  notify:
+         - restart httpd
     - name: Deploy static website
       copy:
         src: index.html
         dest: /var/www/html/
   handlers:
-    - name: Restart apache server
-     service:
-        name: httpd
-        state: restarted 
-        enabled: True
+    - name: restart httpd
+      service: 
+      name=httpd 
+      state=restarted
+      enabled: True
    
 ...
+      
