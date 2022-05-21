@@ -15,10 +15,10 @@
       copy:
         src: index.html
         dest: /var/www/html/
-      handlers:
-    - name: Restart apache
-      ansible.builtin.service:
+  handlers:
+    - name: Restart apache server
         name: httpd
         state: restarted 
+        enabled: True
    
 ...
