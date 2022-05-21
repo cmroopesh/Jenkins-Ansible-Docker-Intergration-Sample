@@ -6,14 +6,14 @@
       yum:
         name: "httpd"
         state: "present"
+  notify:
+    - restart httpd
     - name: Start Apache server
       service:
         name: httpd
         state: started
         enabled: True
-  notify:
-    - restart httpd
-    - name: Deploy static website
+     - name: Deploy static website
       copy:
         src: index.html
         dest: /var/www/html/
